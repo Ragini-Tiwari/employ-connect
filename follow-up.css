@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:  #34495e;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color:#34495e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #1abc9c;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f8f8f8;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+/* Follow-Up Radio Button Group */
+.radio-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px; /* Increased gap between the buttons */
+    margin-top: 10px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.radio-label input {
+    margin-right: 10px; /* Space between the radio button and label text */
+}
+
+.radio-label:hover {
+    background-color: #f1f1f1; /* Light background color on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.radio-label input:checked + span {
+    background-color: #1abc9c; /* Change background color when selected */
+    color: white;
+}
+
+.radio-label input:focus {
+    outline: none;
+    box-shadow: 0 0 3px rgba(26, 188, 156, 0.8);
+}
+
+/* Adjusted space for radio buttons for better layout */
+.radio-group input {
+    margin-top: 5px;
+}
+
+/* Remarks Textarea */
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    resize: vertical; /* Allows vertical resizing */
+    min-height: 130px; /* A comfortable height for typing */
+    max-height: 200px; /* Maximum height */
+    line-height: 1.4; /* Improved line spacing for better readability */
+    box-sizing: border-box; /* Ensures padding doesn't overflow the element */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    textarea {
+        min-height: 120px; /* Slightly smaller height on smaller screens */
+    }
+}
+

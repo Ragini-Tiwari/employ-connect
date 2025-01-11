@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #34495e;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 1.6em; /* Larger title font */
+    margin-top: 40px;
+}
+
+form {
+    max-width: 600px; /* Increased form width */
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px; /* Slightly larger border radius */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+}
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #333;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 14px; /* Increased padding */
+    margin-bottom: 20px; /* Increased margin between inputs */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Softer border radius */
+    font-size: 15px;
+}
+
+button {
+    background-color: #34495e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1abc9c;
+}
+
+table {
+    width: 90%; /* Increased table width */
+    margin: 40px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 15px; /* Increased padding for better readability */
+    text-align: center;
+    font-size: 1.1em;
+}
+
+th {
+    background-color: #f8f8f8;
+    color: #333;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        max-width: 95%; /* Adjust form width on smaller screens */
+        padding: 20px;
+    }
+
+    table {
+        width: 95%; /* Adjust table width on smaller screens */
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}

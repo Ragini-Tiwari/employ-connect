@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Information</title>
+  <link rel="stylesheet" href="fresh-call.css">
+  <script src="fresh-call.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Fresh Leads</h1>
+    <table id="callsTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Phone Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be dynamically populated using JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal for Viewing Lead Details -->
+  <div id="viewModal" class="modal">
+    <div class="modal-content">
+      <h3>Lead Details</h3>
+      <p><strong>Name:</strong> <span id="viewName"></span></p>
+      <p><strong>Course:</strong> <span id="viewCourse"></span></p>
+      <p><strong>Phone Number:</strong> <span id="viewPhone"></span></p>
+      <p><strong>Remarks:</strong> <span id="viewRemarks"></span></p>
+      <button onclick="closeModal('viewModal')">Close</button>
+    </div>
+  </div>
+
+  
+  </div>
+</body>
+</html>

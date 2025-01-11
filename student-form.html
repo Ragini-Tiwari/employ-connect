@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <link rel="stylesheet" href="student-form.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Information Form</h1>
+
+        <!-- Form Section -->
+        <form id="studentForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter student name" required>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" pattern="[0-9]{10}" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email address" required>
+
+            <label for="course">Course:</label>
+            <input type="text" id="course" name="course" placeholder="Enter course name" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+            <label for="location">Qualification:</label>
+            <input type="text" id="location" name="qualification" placeholder="Enter qualification" required>
+
+            <label for="location">Entrance Exams:</label>
+            <input type="text" id="location" name="entrance exam" placeholder="Enter entrance exams" required>
+
+            <label for="location">Remarks:</label>
+            <input type="text" id="location" name="remarks" placeholder="Enter extra information" required>
+
+            <button type="button" onclick="addStudent()">Submit</button>
+        </form>
+
+    </div>
+</body>
+</html>

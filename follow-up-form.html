@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Follow-Up Form</title>
+    <link rel="stylesheet" href="follow-up.css">
+    <script src="follow-up-form.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Follow-Up Form</h1>
+
+        <!-- Form Section -->
+        <form id="followUpForm">
+            <!-- Follow-Up Required -->
+            <div class="form-group">
+                <label for="followUp">Follow-Up Required:</label>
+                <div class="radio-group">
+                    <label for="followUpYes" class="radio-label">
+                        <input type="radio" id="followUpYes" name="followUp" value="Yes" required>
+                        Yes
+                    </label>
+                    <label for="followUpNo" class="radio-label">
+                        <input type="radio" id="followUpNo" name="followUp" value="No" required>
+                        No
+                    </label>
+                </div>
+            </div>
+
+            <!-- Interested -->
+            <div class="form-group">
+                <label for="interested">Interested:</label>
+                <select id="interested" name="interested" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Interested">Interested</option>
+                    <option value="Not Interested">Not Interested</option>
+                </select>
+            </div>
+
+            <!-- Remarks -->
+            <div class="form-group">
+                <label for="remarks">Remarks:</label>
+                <textarea id="remarks" name="remarks" placeholder="Enter remarks" required></textarea>
+            </div>
+
+            <!-- Reminder Date -->
+            <div class="form-group">
+                <label for="reminderDate">Reminder Date:</label>
+                <input type="date" id="reminderDate" name="reminderDate" required>
+            </div>
+
+            <!-- Caller Name -->
+            <div class="form-group">
+                <label for="callerName">Caller Name:</label>
+                <input type="text" id="callerName" name="callerName" placeholder="Enter caller name" required>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="addFollowUp()">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

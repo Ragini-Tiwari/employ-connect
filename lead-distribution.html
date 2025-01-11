@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Distribution</title>
+    <link rel="stylesheet" href="leads.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Lead Distribution</h1>
+
+        <!-- Form to Add Leads -->
+        <form id="leadForm">
+            <!-- Employee Selection -->
+            <label for="employeeName">Assign to Employee:</label>
+            <select id="employeeName" name="employeeName" required>
+                <option value="" disabled selected>Select an employee</option>
+                <!-- Example options - Dynamically populated in production -->
+                <option value="John Doe">Preeti</option>
+                <option value="Jane Smith">Jyoti</option>
+                <option value="Jane Smith">Ragini</option>
+                <option value="Jane Smith">Vishaka</option>
+                <option value="Michael Johnson">Monalika</option>
+            </select>
+
+            <!-- Lead Name -->
+            <label for="leadName">Lead Name:</label>
+            <input type="text" id="leadName" name="leadName" placeholder="Enter lead name" required>
+
+            <!-- Lead Mobile Number -->
+            <label for="leadMobile">Mobile Number:</label>
+            <input type="tel" id="leadMobile" name="leadMobile" placeholder="Enter mobile number" pattern="[0-9]{10}" required>
+
+            <!-- Lead Email -->
+            <label for="leadEmail">Email:</label>
+            <input type="email" id="leadEmail" name="leadEmail" placeholder="Enter email" required>
+
+            <!-- Remarks -->
+            <label for="leadRemarks">Remarks:</label>
+            <textarea id="leadRemarks" name="leadRemarks" placeholder="Enter remarks" required></textarea>
+
+            <!-- Submit Button -->
+            <button type="button" onclick="assignLead()">Assign Lead</button>
+        </form>
+
+        
+    </div>
+</body>
+</html>

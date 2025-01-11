@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Details</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #2c3e50; }
+    .container { max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+    h1 { text-align: center; color: #2c3e50; }
+    p { line-height: 1.6; margin: 10px 0; }
+    a { display: inline-block; margin-top: 20px; text-decoration: none; color: white; background: #1abc9c; padding: 10px 15px; border-radius: 5px; }
+    a:hover { background: #16a085; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="collegeName">Search for specific college</h1>
+    <p id="collegeDetails"></p>
+    <a href="college-list.html">← College List</a>
+  </div>
+
+  <script>
+    // Hardcoded college data
+    const colleges = [
+      {
+        id: 1,
+        name: "G L BAJAJ INSTITUTE OF MANAGEMNT AND RESEARCH",
+        history: "Established in 2000, known for engineering.",
+        established: 2000,
+        approval: "AICTE Approved",
+        pgdm: "AIU, AICTE, NBA",
+        mba: "AKTU",
+        Btech: "AKTU University",
+        bba: "CCS University",
+        recognition: "UGC Recognized",
+        location: "Greater Noida, UP",
+        curriculum: "Engineering, Management, and Arts programs.",
+        fees: "7 lacs 85 thousands",
+        scholarships: "On the basis of MAT, CAT, CMAT, Academics.",
+        placement: "Highest Package - 23LPA , Average Packege - 10.5LPA",
+        benefits: "Laptops, 12 Certification, 6-months paid internship, Book Banks, Bussiness Suit, International tour to top 10 students, Foreign language certification."
+      },
+      {
+        id: 2,
+        name: "LLOYD-Group of education",
+        history: "Established in 2002",
+        established: "2002",
+        approval: "AICTE, AKTU",
+        recognition: "UGC Recognized",
+        location: "Knowledge Park ii, Greater Noida",
+        curriculum: "MBA and PGDM.",
+        fees: "MBA - 3 lacs 25 thousands, PGDM - 7 lacs",
+        scholarships: "Government and private scholarships.",
+        placement: "250+ companies, Highest - 15.02LPA, Average - 5.25LPA",
+        benefits: "Industries visit, live project and summer internship, project based learning, global & expert talk, pre-placement and placement, Job fest-NIYUKTI2024."
+      },
+      {
+        id: 3,
+        name: "GNIOT-Greater Noida institute of technology",
+        history: "Established in 2001",
+        established: "2001",
+        approval: "AICTE, NAAC, CCS University",
+        recognition: "UGC Recognized",
+        location: "Knowledge Park ii, Greater Noida",
+        curriculum: "MBA and PGDM.",
+        fees: "MBA - 3 lacs 56 thousands, PGDM - 8 lacs 37 thousands provided by GIMS(AICTE) which is part of GNIOT Group",
+        scholarships: "Government and private scholarships.",
+        placement: "250+ companies, Highest - 23.31LPA, Average - 7.25LPA",
+        benefits: "18 Certification - 6 international 12 national."
+      },
+      {
+        id: 4,
+        name: "GIMS-GREATER NOIDA INSTITUTE OF MANAGEMENT STUDIES",
+        history: "Established in 2002",
+        established: "2002",
+        approval: "AICTE, AKTU",
+        recognition: "UGC Recognized",
+        location: "Knowledge Park ii, Greater Noida",
+        curriculum: "MBA and PGDM.",
+        fees: "MBA - 3 lacs 25 thousands, PGDM - 7 lacs",
+        scholarships: "Government and private scholarships.",
+        placement: "250+ companies, Highest - 15.02LPA, Average - 5.25LPA",
+        benefits: "Industries visit, live project and summer internship, project based learning, global & expert talk, pre-placement and placement, Job fest-NIYUKTI2024 || Provide written placement gurantee upto 5LPA ."
+      },
+      {
+        id: 5,
+        name: "MANGALMAY GROUP OF INSTITUTE ",
+        history: "Established in 2002",
+        established: "2002",
+        approval: "AICTE, AKTU",
+        recognition: "UGC Recognized",
+        location: "Knowledge Park ii, Greater Noida",
+        curriculum: "MBA and PGDM.",
+        fees: "MBA - 3 lacs 25 thousands, PGDM - 7 lacs",
+        scholarships: "Government and private scholarships.",
+        placement: "250+ companies, Highest - 15.02LPA, Average - 5.25LPA",
+        benefits: "Industries visit, live project and summer internship, project based learning, global & expert talks ||Provide written placement gurantee upto 5LPA"
+      },
+      {
+        id: 6,
+        name: "NIET-NOIDA INSTITUTE OF ENGINEERING AND TECHNOLOGY",
+        history: "Established in 2002",
+        established: "2002",
+        approval: "AICTE, AKTU",
+        recognition: "UGC Recognized",
+        location: "Knowledge Park ii, Greater Noida",
+        curriculum: "MBA and PGDM.",
+        fees: "MBA - 3 lacs 25 thousands, PGDM - 7 lacs",
+        scholarships: "Government and private scholarships.",
+        placement: "250+ companies, Highest - 15.02LPA, Average - 5.25LPA",
+        benefits: "Industries visit, live project and summer internship, project based learning, global & expert talk, pre-placement and placement, Job fest-NIYUKTI2024."
+      },
+      {
+        id: 7,
+        name: "NIU-NOIDA INTERNATIONAL UNIVERSITY",
+        history: "Established in 2002",
+        established: "2002",
+        approval: "AICTE, AKTU",
+        recognition: "UGC Recognized",
+        location: "Knowledge Park ii, Greater Noida",
+        curriculum: "MBA and PGDM.",
+        fees: "MBA - 3 lacs 25 thousands, PGDM - 7 lacs",
+        scholarships: "Government and private scholarships.",
+        placement: "250+ companies, Highest - 15.02LPA, Average - 5.25LPA",
+        benefits: "Industries visit, live project and summer internship, project based learning, global & expert talk, pre-placement and placement, Job fest-NIYUKTI2024."
+      },
+      {
+        id: 8,
+        name: "IILM-INSTITUTE OF INTEGRATED LEARNING IN MANAGEMENT UNIVERSITY",
+        history: "Established in 1993",
+        established: "1993",
+        approval: "AICTE(aproved PGDM program), NAAC,AIU,NBA",
+        recognition: "UGC Recognized",
+        location: "Gurugram, Greater Noida, Lodhi Road",
+        curriculum: "MBA and PGDM.",
+        fees: "MBA - 2 lacs 64 thousands.",
+        scholarships: "Government and private scholarships.",
+        placement: "250+ companies, Highest - 6.31LPA, Average - 3.25LPA",
+        benefits: "Provide"
+      },
+      {
+        id: 9,
+        name: "SPARSH GLOBAL BUSSINESS SCHOOL",
+        history: "Established in 1993",
+        established: "1993",
+        approval: "AICTE(aproved PGDM program), NAAC,AIU,NBA",
+        recognition: "UGC Recognized",
+        location: "Gurugram, Greater Noida, Lodhi Road",
+        curriculum: "MBA and PGDM.",
+        fees: "MBA - 2 lacs 64 thousands.",
+        scholarships: "Government and private scholarships.",
+        placement: "250+ companies, Highest - 6.31LPA, Average - 3.25LPA",
+        benefits: ""
+      },
+      {
+        id: 10,
+        name: "UNIVERSAL BUSSINESS SCHOOL(UBS)",
+        history: "Established in 2009 || started by vice president of Roetus" ,
+        established: "2009",
+        approval: "AICTE, UGC, AIU, NBA",
+        recognition: "UGC Recognized",
+        location: "Mumbai",
+        curriculum: "MBA and PGDM.",
+        fees: "MBA (single specialization-9.98 lac || MBA(dual-11.98 lacs || MBA+GMP-11.48lacs)",
+        scholarships: "Government and private scholarships.",
+        placement: "250+ companies, Highest - 1 crore, Average - 65 lPA",
+        benefits: "Hostel compulsory, endorsed by 60 CEOs of indian and international MNCs."
+      },
+      {
+        id: 11,
+        name: "INDUS BUSSINESS SCHOOL",
+        history: "Established in 1993",
+        established: "1993",
+        approval: "AICTE(aproved PGDM program), NAAC,AIU,NBA",
+        recognition: "UGC Recognized",
+        location: "Gurugram, Greater Noida, Lodhi Road",
+        curriculum: "MBA and PGDM.",
+        fees: "MBA - 2 lacs 64 thousands.",
+        scholarships: "Government and private scholarships.",
+        placement: "250+ companies, Highest - 6.31LPA, Average - 3.25LPA",
+        benefits: "Provide written placement gurantee upto 5LPA, 18 Certification - 6 international 12 national."
+      },
+      {
+        id: 12,
+        name: "ST ANDREWS",
+        history: "Established in 2014",
+        established: "2014",
+        approval: "AICTE, NAAC, MDU University, GOI, PCI, COA, HSBTE",
+        recognition: "UGC Recognized",
+        location: "Gurugram, Delhi NCR",
+        curriculum: " ",
+        fees: "MBA - 2,64,000 || Btech - 4,20,000 || MCA - 1,64,000",
+        scholarships: "Government and private scholarships.",
+        placement: "Highest - 40LPA, Average - 12LPA",
+        benefits: "."
+      },
+      {
+        id: 13,
+        name: "BENETTE UNIVERSITY",
+        history: "Started as bombay journal in 1882, their newspaper : TOI, Eco Times, News Channel : Times Now, Navbharat, ET Now, Ganna.com, mx player, radio mirchi, fil fare, femina miss india, cricbuzz",
+        established: "2016",
+        approval: "AICTE(aproved PGDM program), NAAC,AIU,NBA",
+        recognition: "UGC Recognized",
+        location: "Greater Noida",
+        curriculum: "MBA and PGDM.",
+        fees: "MBA - 12 Lacs.",
+        scholarships: "Government and private scholarships.",
+        placement: "250+ companies, Highest - 6.31LPA, Average - 3.25LPA",
+        benefits: "Provide written placement gurantee upto 5LPA, 18 Certification - 6 international 12 national."
+      }
+      
+      // Add more colleges here
+    ];
+
+    // Get the college ID from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const collegeId = urlParams.get("id");
+
+    // Find the college by ID
+    const college = colleges.find(c => c.id == collegeId);
+
+    // Populate the page with the college details
+    if (college) {
+      document.getElementById("collegeName").textContent = college.name;
+      document.getElementById("collegeDetails").innerHTML = `
+        <p><strong>History:</strong> ${college.history}</p>
+        <p><strong>Established:</strong> ${college.established}</p>
+        <p><strong>Approval:</strong> ${college.approval}</p>
+        <p><strong>Recognition:</strong> ${college.recognition}</p>
+        <p><strong>Location:</strong> ${college.location}</p>
+        <p><strong>Curriculum:</strong> ${college.curriculum}</p>
+        <p><strong>Fees:</strong> ${college.fees}</p>
+        <p><strong>Scholarships:</strong> ${college.scholarships}</p>
+        <p><strong>Placement:</strong> ${college.placement}</p>
+        <p><strong>Additional Benefits:</strong> ${college.benefits}</p>
+      `;
+    } else {
+      document.getElementById("collegeDetails").textContent = "Search College.";
+    }
+  </script>
+</body>
+</html>
