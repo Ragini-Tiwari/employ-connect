@@ -136,5 +136,33 @@ function logIn() {
     window.location.href = 'super-admin-dashboard.html'; 
 }
 function addUser() {
-    window.location.href = 'index.html'; 
+    window.location.href = 'super-admin-dashboard.html'; 
   }
+ // Function to update the calendar with the current date and time
+function updateCalendar() {
+    const calendar = document.getElementById('calendar');
+    const now = new Date();
+
+    // Get current date and time
+    const day = now.getDate();
+    const month = now.toLocaleString('default', { month: 'long' });
+    const year = now.getFullYear();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    // Format time to display leading zeros for single digit minutes and seconds
+    const formattedTime = `${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+    // Set the calendar content
+    calendar.innerHTML = `
+        <span>${day} ${month}, ${year}</span>
+        <span>${formattedTime}</span>
+    `;
+}
+
+// Update calendar every second
+setInterval(updateCalendar, 1000);
+
+// Initial call to display the date and time immediately on load
+updateCalendar();

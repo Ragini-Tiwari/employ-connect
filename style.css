@@ -1,15 +1,18 @@
+/* Reset Margin and Padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
 }
 
+/* Container Layout */
 .container {
     display: flex;
     flex-direction: column;
@@ -17,26 +20,63 @@ body {
 }
 
 /* Header Styles */
-header {
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #34495e;
-    color: #fff;
-    padding: 15px 0;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(54, 151, 152, 0.1);
+    padding: 10px 20px;
+    color: white;
 }
 
-header h1 {
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-left h1 {
     margin: 0;
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Notification Icon */
+.notification-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* User Info & Logout */
+.user-info {
+    font-size: 14px;
+}
+
+.logout-btn {
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
 }
 
 /* Sidebar Styles */
 .sidebar {
     background-color: #2c3e50;
     color: #fff;
-    width: 220px;
+    width: 240px;  /* Adjust width to cover more of the page */
     padding-top: 20px;
     position: fixed;
     height: 100%;
@@ -71,19 +111,17 @@ header h1 {
 
 /* Main Content Styles */
 .content {
-    margin-left: 240px;
+    margin-left: 240px;  /* Adjusted margin to account for the full sidebar width */
     padding: 20px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;  /* Use grid to make a column layout for info boxes */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Dynamically create columns */
+    gap: 20px;  /* Spacing between the info boxes */
 }
 
 /* Info Box Styles */
 .info-box {
     background-color: #ffffff;
     padding: 20px;
-    width: 280px;
     text-align: center;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -111,6 +149,7 @@ header h1 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Sidebar adjustment for smaller screens */
     .sidebar {
         width: 100px;
         padding: 10px 0;
@@ -122,8 +161,9 @@ header h1 {
     }
 
     .content {
-        margin-left: 120px;
+        margin-left: 120px;  /* Adjust margin on smaller screens */
         padding: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  /* Adjust column size */
         flex-direction: column;
         align-items: center;
     }
@@ -131,4 +171,79 @@ header h1 {
     .info-box {
         width: 90%;
     }
+
+    /* Make the header elements stack on mobile view */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    .header-left h1 {
+        font-size: 18px;
+    }
+
+    .header-right {
+        margin-left: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .notification-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+/* Additional Styles for Calendar */
+.calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    color: white;
+    background-color: #34495e;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.calendar span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Adjust header-right section to allow calendar positioning */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.notification-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* Calendar Styles */
+#calendar {
+    font-size: 14px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: fixed; /* Use fixed positioning for bottom-right corner */
+    bottom: 20px;  /* Distance from the bottom of the page */
+    right: 20px;   /* Distance from the right of the page */
+    width: 160px;  /* Adjust width if needed */
+    text-align: center;
+}
+
+.calendar span {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
 }

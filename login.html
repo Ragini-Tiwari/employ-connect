@@ -3,30 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Enquiry Management System</title>
+    <title>College Charcha - Login</title>
     <link rel="stylesheet" href="login.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
+   
     <div class="login-container">
-        <h1>Login</h1>
+        <!-- Logo and Title -->
+        
+        <div class="login-title">
+            <img src="logo.png" alt="College Charcha Logo" class="login-logo">
+            <h1>Welcome</h1>
+        </div>
+
+        <!-- Login Form -->
         <form id="loginForm">
+            <h2>Login To Your Account</h2>
+
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Enter username" required>
             
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Enter password" required>
-            
-            <label for="role">Role:</label>
-            <select id="role" name="role" required>
-                <option value="superadmin">Super Admin</option>
-                <option value="admin">Admin</option>
-            </select>
-            
-            
-            <button onclick="logIn()">Login</button>
+
+            <button type="button" onclick="logIn()">Login</button>
         </form>
+
         <p id="errorMessage" class="error-message"></p>
     </div>
+
+    <script>
+        function logIn() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            if (!username || !password) {
+                errorMessage.textContent = "Please fill out all fields.";
+                return;
+            }
+
+            // Simulate login (replace this with actual validation logic)
+            if (username === "admin" && password === "password") {
+                alert("Login successful!");
+                errorMessage.textContent = "";
+                window.location.href = "index.html"; // Redirect to dashboard
+            } else {
+                errorMessage.textContent = "Invalid username or password.";
+            }
+        }
+
+    
+    // Set the username dynamically
+    document.getElementById('usernameDisplay').textContent = 'John Doe'; // Replace with actual username
+
+    // Logout function
+    function logOut() {
+        alert('You have been logged out.');
+        window.location.href = 'login.html'; // Redirect to login page
+    }
+</script>
+
+
 </body>
 </html>

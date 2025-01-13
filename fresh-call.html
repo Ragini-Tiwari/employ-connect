@@ -1,43 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Call Information</title>
-  <link rel="stylesheet" href="fresh-call.css">
-  <script src="fresh-call.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Information CRM</title>
+    <link rel="stylesheet" href="fresh-call.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Fresh Leads</h1>
-    <table id="callsTable">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Course</th>
-          <th>Phone Number</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Rows will be dynamically populated using JavaScript -->
-      </tbody>
-    </table>
-  </div>
+   
+      <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <!-- Left Section: Title -->
+            <div class="header-left">
+            </div>
+    
+            <!-- Right Section: Notification, Username, and Logout -->
+            <div class="header-right">
+                <img src="noti.png" alt="Notifications" class="notification-icon">
+                <p class="user-info">Hello, <span id="usernameDisplay">User</span></p>
+                <button onclick="logOut()" class="logout-btn">Logout</button>
+               
+            </div>
+        </header>
+        <div id="infoTableContainer" class="info-table-container">
+            <h2>Call Information</h2>
+            <table id="infoTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Course</th>
+                        <th>College</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="infoTableBody">
+                    <!-- Dynamic content will appear here -->
+                </tbody>
+            </table>
+        </div>
 
-  <!-- Modal for Viewing Lead Details -->
-  <div id="viewModal" class="modal">
-    <div class="modal-content">
-      <h3>Lead Details</h3>
-      <p><strong>Name:</strong> <span id="viewName"></span></p>
-      <p><strong>Course:</strong> <span id="viewCourse"></span></p>
-      <p><strong>Phone Number:</strong> <span id="viewPhone"></span></p>
-      <p><strong>Remarks:</strong> <span id="viewRemarks"></span></p>
-      <button onclick="closeModal('viewModal')">Close</button>
+        <div id="viewModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeViewModal()">&times;</span>
+                <h2>View Call Information</h2>
+                <p id="viewName"></p>
+                <p id="viewContact"></p>
+                <p id="viewCourse"></p>
+                <p id="viewCollege"></p>
+                <p id="viewRemarks"></p>
+                <p id="viewDateTime"></p>
+            </div>
+        </div>
     </div>
-  </div>
 
-  
-  </div>
+    <script src="fresh-call.js"></script>
 </body>
 </html>

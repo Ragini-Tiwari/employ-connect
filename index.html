@@ -1,69 +1,71 @@
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>College Charcha - Enquiry Management System</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <div class="container">
-            <header>
-                <h1>College Charcha Enquiry Management System</h1>
-                
-            </header>
-            <div class="main-content">
-                <!-- Left Menu -->
-                <nav class="sidebar">
-                    <ul>
-                        <li><a href="student-form.html" id="settings">Profilling</a></li>
-                        <li><a href="college-details.html" id="reports">College Details</a></li>
-                        <li><a href="search.html" id="freshLead">Search Number</a></li>
-                        <li><a href="admission-records.html" id="followUp">Admission Records</a></li>
-                        <li><a href="complete_follow_up.html" id="completeFollowUp">Complete Follow Up</a></li>
-                        <li><a href="not_interested.html" id="notInterested">Not Interested</a></li>
-                     
-                       
-                    </ul>
-                </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Charcha - Enquiry Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <!-- Left Section: Title -->
+            <div class="header-left">
+                <h1>College Charcha CRM</h1>
+            </div>
     
-                <!-- Main Content (Boxes) -->
-                <div class="content">
-                    <div class="info-box" onclick="window.location.href='fresh-call.html'">
-                        <h2>Fresh Lead</h2>
-                        <p>View and manage new enquiries</p>
-                    </div>
-                    <div class="info-box" onclick="window.location.href='follow_up.html'">
-                        <h2>Follow Up</h2>
-                        <p>View and manage follow-ups</p>
-                    </div>
-                    <div class="info-box" onclick="window.location.href='complete_follow_up.html'">
-                        <h2>Complete Follow Up</h2>
-                        <p>View and manage completed follow-ups</p>
-                    </div>
-                    <div class="info-box" onclick="window.location.href='not_interested.html'">
-                        <h2>Pending Follow-Ups</h2>
-                        <p>View and manage pending follow Ups enquiries</p>
-                    </div>
+            <!-- Right Section: Notification, Username, and Logout -->
+            <div class="header-right">
+                <img src="noti.png" alt="Notifications" class="notification-icon">
+                <p class="user-info">Hello, <span id="usernameDisplay">User</span></p>
+                <button onclick="logOut()" class="logout-btn">Logout</button>
                
-                    <div class="info-box" onclick="window.location.href='not_interested.html'">
-                        <h2>Not Interested</h2>
-                        <p>View and manage non-interested enquiries</p>
-                    </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar Navigation -->
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="dashboard.html" id="dashboard">Dashboard</a></li>
+                    <li><a href="student-form.html" id="profile">Profilling</a></li>
+                    <li><a href="college-details.html" id="collegeDetails">College Details</a></li>
+                    <li><a href="search.html" id="searchNumber">Search Number</a></li>
+                    <li><a href="admission-records.html" id="admissionRecords">Admission Records</a></li>
+                    <li><a href="complete_follow_up.html" id="completeFollowUp">Complete Follow Up</a></li>
+                    <li><a href="not_interested.html" id="notInterested">Not Interested</a></li>
+                </ul>
+            </nav>
+    
+            <!-- Content Area -->
+            <div class="content">
+                <!-- Info Boxes -->
+                <div class="info-box" onclick="window.location.href='fresh-call.html'">
+                    <h2>Fresh Lead</h2>
+                    <p>View and manage new enquiries</p>
+                </div>
+                <div class="info-box" onclick="window.location.href='follow_up.html'">
+                    <h2>Follow Up</h2>
+                    <p>View and manage follow-ups</p>
+                </div>
+                <div class="info-box" onclick="window.location.href='complete_follow_up.html'">
+                    <h2>Complete Follow Up</h2>
+                    <p>View and manage completed follow-ups</p>
+                </div>
+                <div class="info-box" onclick="window.location.href='pending-follow-ups.html'">
+                    <h2>Pending Follow-Ups</h2>
+                    <p>View and manage pending follow-ups</p>
+                </div>
+                <div class="info-box" onclick="window.location.href='not_interested.html'">
+                    <h2>Not Interested</h2>
+                    <p>View and manage non-interested enquiries</p>
                 </div>
             </div>
         </div>
-    </body>
-    </html>
-    
-   
-
-        <!-- Main Content Area -->
-        <div class="main-content" id="content">
-            <!-- Dynamic Content Loaded Here -->
-        </div>
+        <div id="calendar" class="calendar"></div>
     </div>
 
     <script src="script.js"></script>

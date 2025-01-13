@@ -7,28 +7,46 @@
   <link rel="stylesheet" href="super-admin.css">
 </head>
 <body>
-  <div class="dashboard">
-    <!-- Sidebar -->
-    <nav class="sidebar">
-      <h2>Admin Dashboard</h2>
-      <ul>
-        <li><button onclick="showModule('userManagement')">User Management</button></li>
-        <li><button onclick="showModule('userManagement')">Employee list</button></li>
-        <li><button onclick="showModule('inquiryManagement')">Leads Management</button></li>
-        <li><button onclick="showModule('reports')">Monthly Reports</button></li>
-      </ul>
-    </nav>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="header">
+      <!-- Left Section: Title -->
+      <div class="header-left">
+        <h1>College Charcha CRM</h1>
+      </div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <header>
-        <h1 id="moduleTitle">Dashboard</h1>
-      </header>
-      <section id="contentArea">
-        <p>Select a module from the sidebar.</p>
-      </section>
-    </main>
+      <!-- Right Section: Notification, Username, and Logout -->
+      <div class="header-right">
+        <img src="noti.png" alt="Notifications" class="notification-icon">
+        <p class="user-info">Hello, <span id="usernameDisplay">User</span></p>
+        <button onclick="logOut()" class="logout-btn">Logout</button>
+      </div>
+    </header>
+
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <h2>Admin Dashboard</h2>
+        <ul>
+          <li><button onclick="showModule('userManagement')">User Management</button></li>
+          <li><button onclick="showModule('employeeList')">Employee List</button></li>
+          <li><button onclick="showModule('inquiryManagement')">Leads Management</button></li>
+          <li><button onclick="showModule('reports')">Monthly Reports</button></li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header>
+          <h1 id="moduleTitle">Dashboard</h1>
+        </header>
+        <section id="contentArea">
+          <p>Select a module from the sidebar.</p>
+        </section>
+      </main>
+    </div>
   </div>
+
   <script src="super-admin.js"></script>
 </body>
 </html>
