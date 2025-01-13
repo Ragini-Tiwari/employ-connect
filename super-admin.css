@@ -105,7 +105,7 @@ body {
   flex-grow: 1;
   background: #ecf0f1;
   padding: 20px;
-  margin-left: 250px; /* To make space for the sidebar */
+  margin-left: 10px; /* To make space for the sidebar */
   height: calc(100vh - 60px); /* Height without the header */
   overflow: hidden; /* Prevent scrolling */
 }

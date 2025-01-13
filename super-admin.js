@@ -58,14 +58,16 @@ function renderUserManagement(contentArea) {
                 <td>${user.role}</td>
                 <td>
                   <button class="action" onclick="editUser(${index})">Edit</button>
+                  
                   <button class="action delete" onclick="deleteUser(${index})">Delete</button>
+                   <button class="action" onclick="progressUser(${index})">Progress</button>
                 </td>
               </tr>`
             )
             .join("")}
         </tbody>
       </table>
-      <button class="action primary" onclick="navigateToRegistration()">+ Add User</button>
+      <button class="action primary" onclick="navigateToRegistration()">+ Add Employee</button>
     </div>
   `;
 }
